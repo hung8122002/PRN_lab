@@ -1,0 +1,19 @@
+﻿<Window x:Class="SalesWpfApp.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWpfApp"
+        xmlns:viewmodel="clr-namespace:SalesWpfApp.ViewModel"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen"
+        Title="Menu">
+    <Window.DataContext>
+        <viewmodel:MenuViewModel/>
+    </Window.DataContext>
+    <StackPanel Width="300">
+        <Button Command="{Binding Product}" Padding="10" FontSize="20" Margin="10">Product</Button>
+        <Button Command="{Binding Member}" Padding="10" FontSize="20" Margin="10">Member</Button>
+        <Button Command="{Binding Order}" Padding="10" FontSize="20" Margin="10">Order</Button>
+    </StackPanel>
+</Window>

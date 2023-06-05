@@ -1,0 +1,15 @@
+D:\PRN211\DataAccess\Data Layer\bin\Debug\net6.0\Data Layer.deps.json
+D:\PRN211\DataAccess\Data Layer\bin\Debug\net6.0\Data Layer.dll
+D:\PRN211\DataAccess\Data Layer\bin\Debug\net6.0\Data Layer.pdb
+D:\PRN211\DataAccess\Data Layer\obj\Debug\net6.0\Data Layer.csproj.AssemblyReference.cache
+D:\PRN211\DataAccess\Data Layer\obj\Debug\net6.0\Data Layer.GeneratedMSBuildEditorConfig.editorconfig
+D:\PRN211\DataAccess\Data Layer\obj\Debug\net6.0\Data Layer.AssemblyInfoInputs.cache
+D:\PRN211\DataAccess\Data Layer\obj\Debug\net6.0\Data Layer.AssemblyInfo.cs
+D:\PRN211\DataAccess\Data Layer\obj\Debug\net6.0\Data Layer.csproj.CoreCompileInputs.cache
+D:\PRN211\DataAccess\Data Layer\obj\Debug\net6.0\Data Layer.dll
+D:\PRN211\DataAccess\Data Layer\obj\Debug\net6.0\refint\Data Layer.dll
+D:\PRN211\DataAccess\Data Layer\obj\Debug\net6.0\Data Layer.pdb
+D:\PRN211\DataAccess\Data Layer\obj\Debug\net6.0\ref\Data Layer.dll
+D:\PRN211\DataAccess\Data Layer\bin\Debug\net6.0\Data Layer.runtimeconfig.json
+D:\PRN211\DataAccess\Data Layer\obj\Debug\net6.0\Data Layer.genruntimeconfig.cache
+D:\PRN211\DataAccess\Data Layer\bin\Debug\net6.0\appsettings.json

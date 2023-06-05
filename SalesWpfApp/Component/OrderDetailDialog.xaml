@@ -1,0 +1,124 @@
+﻿<Window x:Class="SalesWpfApp.Component.OrderDetailDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWpfApp.Component" xmlns:viewmodel="clr-namespace:SalesWpfApp.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:OrderViewModel}"
+        mc:Ignorable="d"
+        Title="OrderDetail" SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None">
+    <StackPanel Width="300" Margin="20" x:Name="stpStudents">
+        <TextBlock Margin="0 0 0 5" HorizontalAlignment="Center" FontWeight="Bold">Order Detail</TextBlock>
+
+        <Grid Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" FontWeight="Bold">
+                Member Id
+            </Label>
+
+            <TextBox IsReadOnly="True" Text="{Binding MemberId}" Grid.Column="1" Padding="4 2"/>
+        </Grid>
+
+        <Grid Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" FontWeight="Bold">
+                Order Date
+            </Label>
+
+            <TextBox IsReadOnly="True" Text="{Binding OrderDate}" Grid.Column="1" Padding="4 2"/>
+        </Grid>
+
+        <Grid Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" FontWeight="Bold">
+                Required Date
+            </Label>
+
+            <TextBox Text="{Binding RequiredDate}" Grid.Column="1" Padding="4 2"/>
+        </Grid>
+
+        <Grid Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" FontWeight="Bold">
+                Shipped Date
+            </Label>
+
+            <TextBox Text="{Binding ShippedDate}" Grid.Column="1" Padding="4 2"/>
+        </Grid>
+
+        <Grid Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" FontWeight="Bold">
+                Freight
+            </Label>
+
+            <TextBox Text="{Binding Freight}" Grid.Column="1" Padding="4 2"/>
+        </Grid>
+
+        <Grid Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" FontWeight="Bold">
+                Unit Price
+            </Label>
+
+            <TextBox Text="{Binding UnitPrice}" Grid.Column="1" Padding="4 2"/>
+        </Grid>
+
+        <Grid Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" FontWeight="Bold">
+                Quantity
+            </Label>
+
+            <TextBox Text="{Binding Quantity}" Grid.Column="1" Padding="4 2"/>
+        </Grid>
+
+        <Grid Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" FontWeight="Bold">
+                Discount
+            </Label>
+
+            <TextBox Text="{Binding Discount}" Grid.Column="1" Padding="4 2"/>
+        </Grid>
+
+        <!--button-->
+        <StackPanel Margin="0 10 0 0" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button Command="{Binding CloseDialog}" Margin="0 5 5 5"  Width="50">Cancel</Button>
+            <Button Command="{Binding UpdateOrderCommand}" CommandParameter="{Binding OrderObject}" Margin="5 5 0 5" Width="50">Edit</Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

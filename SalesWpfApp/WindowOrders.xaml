@@ -1,0 +1,80 @@
+﻿<Window x:Class="SalesWpfApp.WindowOrders"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SalesWpfApp" xmlns:viewmodel="clr-namespace:SalesWpfApp.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:OrderViewModel}"
+        mc:Ignorable="d" 
+        IsHitTestVisible="{Binding CanClick, Mode=TwoWay}"
+        WindowStartupLocation="CenterScreen"
+      SizeToContent="WidthAndHeight"
+      Title="WindowOrders">
+
+    <StackPanel Background="White">
+        <Button Command="{Binding BackToMenu}" Margin="5" Width="100" HorizontalAlignment="Left">Back to menu</Button>
+        <TextBlock Margin="0 10 0 10" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold">Order</TextBlock>
+        <ListView SelectedItem="{Binding OrderObject, Mode=OneWayToSource}" MaxHeight="200" ScrollViewer.VerticalScrollBarVisibility="Auto"
+            ItemsSource="{Binding OrderObjects, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Padding="10" x:Name="lvShow">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="60" Header="OrderID">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding OrderId}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="70" Header="MemberId">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding MemberId}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="140" Header="OrderDate">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding OrderDate}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="90" Header="Required Date">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding RequireDare}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="90" Header="Shipped Date">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ShippingDate}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="60" Header="Freight">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Freight}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <!--button-->
+        <StackPanel Margin="0 10 0 0" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button Margin="0 5 5 5" Width="50" IsEnabled="{Binding CanDelete}"
+                        Command="{Binding UpdateCommand}" 
+                        CommandParameter="{Binding OrderObject}">Edit</Button>
+            <Button Margin="5 5 0 5" Width="50" IsEnabled="{Binding CanDelete}"
+                        Command="{Binding DeleteCommand}"
+                        CommandParameter="{Binding OrderObject}">Delete</Button>
+        </StackPanel>
+    </StackPanel>
+</Window>
